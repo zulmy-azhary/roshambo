@@ -30,9 +30,17 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
+  
   body {
     font-family: 'Barlow Semi Condensed', sans-serif;
     background: var(--background);
+  }
+
+  h1, h2, h3, h4, h5, h6, p, button, li {
+    text-transform: uppercase;
+  }
+
+  li {
+    list-style-type: none;
   }
 `;

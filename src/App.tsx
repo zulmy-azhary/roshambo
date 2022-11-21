@@ -1,23 +1,22 @@
-import { useState } from "react";
 import styled from "styled-components";
+import { Footer, Navbar } from "./components";
 
 const Container = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   row-gap: 1rem;
   height: 100vh;
   color: var(--header);
+  padding: 3.5rem 2rem 2rem;
 `;
 
 const App: React.FC = () => {
-  const [count, setCount] = useState<number>(0);
-
   return (
     <Container>
-      <button onClick={() => setCount((prev) => prev + 1)}>Counter</button>
-      <p>{count}</p>
+      <Navbar />
+      <Footer />
     </Container>
   );
 };
