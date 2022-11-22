@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import { useMode } from "../context";
 import { Button } from "../styles/SharedComponents";
 
 const Container = styled.footer`
@@ -10,19 +11,15 @@ const Container = styled.footer`
 `;
 
 const Footer: React.FC = () => {
-  const [advancedMode, setAdvancedMode] = useState<boolean>(false);
-
-  const handleClick = () => {
-    setAdvancedMode((prev) => !prev);
-  };
+  const { mode, handleClick } = useMode();
 
   return (
     <Container>
       <Button
         onClick={handleClick}
-        title={`Switch to ${advancedMode ? "Advanced" : "Normal"} Mode`}
+        title={`Switch to ${mode === "Normal" ? "Advanced" : "Normal"} Mode`}
       >
-        {!advancedMode ? "Advanced" : "Normal"} Mode
+        {mode === "Normal" ? "Advanced" : "Normal"} Mode
       </Button>
       <Button>Rules</Button>
     </Container>

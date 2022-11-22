@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Footer, Navbar } from "./components";
+import { Footer, Main, Navbar } from "./components";
 
 const Container = styled.div`
   display: flex;
@@ -16,6 +16,7 @@ const App: React.FC = () => {
   return (
     <Container>
       <Navbar />
+      <Main />
       <Footer />
     </Container>
   );

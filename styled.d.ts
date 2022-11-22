@@ -8,7 +8,7 @@ declare module "styled-components" {
         paper: string;
         rock: string;
         lizard: string;
-        cyan: string;
+        spock: string;
       };
       neutral: {
         dark: string;

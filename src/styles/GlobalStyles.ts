@@ -10,7 +10,7 @@ export default createGlobalStyle`
     --paper: ${(props) => props.theme.colors.primary.paper};
     --rock: ${(props) => props.theme.colors.primary.rock};
     --lizard: ${(props) => props.theme.colors.primary.lizard};
-    --cyan: ${(props) => props.theme.colors.primary.cyan};
+    --spock: ${(props) => props.theme.colors.primary.spock};
 
     /* Neutral */
     --dark: ${(props) => props.theme.colors.neutral.dark};
