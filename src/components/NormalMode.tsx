@@ -5,7 +5,7 @@ import { IconButton } from ".";
 const NormalGrid = styled.div`
   position: absolute;
   width: calc(var(--mobile));
-  height: 40vh;
+  height: 35vh;
   display: grid;
   place-items: center;
   margin: 0 auto;

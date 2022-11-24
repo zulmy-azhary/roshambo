@@ -38,6 +38,7 @@ export const ButtonIcon = styled.button<{ mode: Mode }>`
   cursor: pointer;
   box-shadow: inset 0px -8px rgba(0, 0, 0, 0.25);
   z-index: 2;
+  transition: 0.2s ease-in-out;
 
   &:before {
     content: "";
@@ -51,6 +52,10 @@ export const ButtonIcon = styled.button<{ mode: Mode }>`
     transform: translate(-50%, -50%);
     box-shadow: inset 0px 8px rgba(0, 0, 0, 0.125);
     z-index: -1;
+  }
+
+  &:hover {
+    transform: scale(1.15);
   }
 
   @media (min-width: ${props => props.theme.media.tablet}) {

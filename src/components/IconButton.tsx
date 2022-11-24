@@ -22,7 +22,7 @@ interface Props {
 
 const IconButton: React.FC<Props> = ({ variant, mode, placeSelf }) => {
   return (
-    <Button variant={variant} mode={mode} placeSelf={placeSelf}>
+    <Button onClick={() => console.log(variant)} variant={variant} mode={mode} placeSelf={placeSelf}>
       <Image src={`/assets/icon-${variant.toLowerCase()}.svg`} alt={`${variant} Button`} />
     </Button>
   );

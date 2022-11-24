@@ -43,4 +43,8 @@ export default createGlobalStyle`
   li {
     list-style-type: none;
   }
+
+  img {
+    user-select: none;
+  }
 `;
