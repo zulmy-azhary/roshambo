@@ -1,4 +1,4 @@
-import React, { type HTMLAttributes } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useSelected } from "../context";
 import { ButtonIcon } from "../styles/SharedComponents";
@@ -31,13 +31,13 @@ const Image = styled.img`
   height: 35%;
 `;
 
-interface Props extends HTMLAttributes<HTMLButtonElement> {
+interface Props {
   variant: ButtonVariants;
   mode: Mode;
   placeSelf?: string;
 }
 
-const IconButton: React.FC<Props> = ({ variant, mode, placeSelf, ...props }) => {
+const IconButton: React.FC<Props> = ({ variant, mode, placeSelf }) => {
   const { setSelected } = useSelected();
   return (
     <Button
@@ -45,7 +45,6 @@ const IconButton: React.FC<Props> = ({ variant, mode, placeSelf, ...props }) => 
       variant={variant}
       mode={mode}
       placeSelf={placeSelf}
-      {...props}
     >
       <Image src={`/assets/icon-${variant.toLowerCase()}.svg`} alt={`${variant} Button`} />
     </Button>
