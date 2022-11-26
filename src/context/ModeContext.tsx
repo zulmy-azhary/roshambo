@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useCallback, useContext, useState } from "react";
 import type { Dispatcher, Mode } from "../types";
 
 interface ModeCtx {
@@ -18,9 +18,10 @@ export const useMode = (): ModeCtx => useContext(ModeContext);
 const ModeProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [mode, setMode] = useState<Mode>("Normal");
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     setMode((prev) => (prev === "Normal" ? "Advanced" : "Normal"));
-  };
+  }, [mode]);
+
   return (
     <ModeContext.Provider value={{ mode, setMode, handleClick }}>{children}</ModeContext.Provider>
   );

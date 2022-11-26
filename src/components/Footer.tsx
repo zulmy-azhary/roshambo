@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
-import { useMode } from "../context";
+import { useMode, useResult } from "../context";
 import { Button } from "../styles/SharedComponents";
 
 const Container = styled.footer`
@@ -12,16 +12,18 @@ const Container = styled.footer`
 
 const Footer: React.FC = () => {
   const { mode, handleClick } = useMode();
+  const { loading } = useResult();
 
   return (
     <Container>
       <Button
         onClick={handleClick}
         title={`Switch to ${mode === "Normal" ? "Advanced" : "Normal"} Mode`}
+        disabled={loading}
       >
         {mode === "Normal" ? "Advanced" : "Normal"} Mode
       </Button>
-      <Button>Rules</Button>
+      <Button disabled={loading}>Rules</Button>
     </Container>
   );
 };

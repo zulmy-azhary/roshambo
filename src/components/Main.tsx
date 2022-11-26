@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import { useMode } from "../context";
-import { NormalMode, AdvancedMode } from ".";
+import { useMode, useSelected } from "../context";
+import { NormalMode, AdvancedMode, Result } from ".";
 
 const Container = styled(motion.main)`
   position: relative;
@@ -36,13 +36,22 @@ const Image = styled.img`
 
 const Main: React.FC = () => {
   const { mode } = useMode();
+  const { selected } = useSelected();
+
   return (
     <Container>
-      <Image
-        src={`/assets/${mode === "Normal" ? "bg-triangle" : "bg-pentagon"}.svg`}
-        alt="Main background"
-      />
-      {mode === "Normal" ? <NormalMode /> : <AdvancedMode />}
+      {!selected && (
+        <>
+          <Image
+            src={`/assets/${mode === "Normal" ? "bg-triangle" : "bg-pentagon"}.svg`}
+            alt="Main background"
+          />
+          {mode === "Normal" && <NormalMode />}
+          {mode === "Advanced" && <AdvancedMode />}
+        </>
+      )}
+
+      {selected !== null && <Result />}
     </Container>
   );
 };

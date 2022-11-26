@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { useMode } from "../context";
+import { useMode, useScore } from "../context";
 
 const Header = styled.header`
   width: 100%;
@@ -80,13 +80,14 @@ const ScoreNumber = styled.p`
 
 const Navbar: React.FC = () => {
   const { mode } = useMode();
+  const { score } = useScore();
   return (
     <Header>
       <Nav>
         <Image src={`/assets/${mode === "Normal" ? "logo" : "logo-bonus"}.svg`} alt="Logo" />
         <Score>
           <ScoreText>Score</ScoreText>
-          <ScoreNumber>11</ScoreNumber>
+          <ScoreNumber>{score}</ScoreNumber>
         </Score>
       </Nav>
     </Header>
