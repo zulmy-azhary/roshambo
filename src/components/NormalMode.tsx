@@ -4,8 +4,9 @@ import { IconButton } from ".";
 
 const NormalGrid = styled.div`
   position: absolute;
-  width: calc(var(--mobile));
-  height: 35vh;
+  width: 100%;
+  max-width: var(--mobile);
+  min-height: 20rem;
   display: grid;
   place-items: center;
   margin: 0 auto;
@@ -16,6 +17,7 @@ const NormalGrid = styled.div`
 
   @media (min-width: ${(props) => props.theme.media.tablet}) {
     width: calc(var(--tablet) / 1.25);
+    max-width: calc(var(--tablet) / 1.25);
     height: 50vh;
   }
   

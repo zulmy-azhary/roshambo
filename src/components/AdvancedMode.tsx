@@ -4,8 +4,9 @@ import { IconButton } from ".";
 
 const AdvancedGrid = styled.div`
   position: absolute;
-  width: calc(var(--mobile));
-  height: 40vh;
+  width: 100%;
+  max-width: var(--mobile);
+  min-height: 20rem;
   display: grid;
   place-items: center;
   margin: 0 auto;
@@ -18,11 +19,13 @@ const AdvancedGrid = styled.div`
 
   @media (min-width: ${(props) => props.theme.media.tablet}) {
     width: calc(var(--tablet) / 1.5);
+    max-width: calc(var(--tablet) / 1.5);
     height: 50vh;
   }
   
   @media (min-width: ${(props) => props.theme.media.desktop}) {
     width: calc(var(--desktop) / 2);
+    max-width: calc(var(--desktop) / 2);
     height: 100%;
   }
 `;

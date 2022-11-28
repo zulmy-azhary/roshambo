@@ -5,11 +5,12 @@ import { gameLogic } from "../helper/gameLogic";
 import { randomInt } from "../helper/randomInt";
 import type { ButtonVariants } from "../types";
 import { ButtonIcon, Button } from "../styles/SharedComponents";
+import { motion } from "framer-motion";
 
 const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-gap: 5rem 1rem;
+  grid-gap: 3rem 1rem;
   width: 100%;
 
   @media (min-width: ${(props) => props.theme.media.desktop}) {
@@ -37,7 +38,7 @@ const Text = styled.h2`
   font-size: 0.875rem;
   letter-spacing: 2px;
 
-  @media (min-width: ${(props) => props.theme.media.tablet}) {
+  @media (min-width: ${(props) => props.theme.media.desktop}) {
     font-size: 1.5rem;
   }
 `;
@@ -47,6 +48,7 @@ const ButtonPlayer = styled(ButtonIcon)<{ variant: ButtonVariants; isWinner: boo
   position: relative;
   width: 120px;
   height: 120px;
+  transition: none;
 
   ${(props) =>
     !!props.isWinner &&
@@ -168,7 +170,7 @@ const Result: React.FC = () => {
           variant={selected as ButtonVariants}
           initial={{ y: 20 }}
           animate={{ y: 0, transition: { repeat: 3 } }}
-          transition={{ repeat: 3, default: { ease: "linear" } }}
+          transition={{ duration: 0.5 }}
         >
           <Image
             src={`/assets/icon-${selected?.toLowerCase()}.svg`}
@@ -194,7 +196,12 @@ const Result: React.FC = () => {
             />
           </ButtonPlayer>
         ) : (
-          <ButtonPlaceholder />
+          <ButtonPlaceholder
+            as={motion.div}
+            initial={{ y: 20 }}
+            animate={{ y: 0, transition: { repeat: 3 } }}
+            transition={{ duration: 0.5 }}
+          />
         )}
       </Player>
     </Container>

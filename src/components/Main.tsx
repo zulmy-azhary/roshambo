@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { useMode, useSelected } from "../context";
 import { NormalMode, AdvancedMode, Result } from ".";
@@ -12,6 +12,7 @@ const Container = styled(motion.main)`
   display: grid;
   margin: 0 auto;
   justify-content: center;
+  
   @media (min-width: ${(props) => props.theme.media.tablet}) {
     width: calc(var(--tablet) / 2.5);
   }
