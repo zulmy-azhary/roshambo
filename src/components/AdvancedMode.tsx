@@ -33,11 +33,11 @@ const AdvancedGrid = styled.div`
 const AdvancedMode: React.FC = () => {
   return (
     <AdvancedGrid>
-      <IconButton mode="Advanced" variant="Scissors" placeSelf="end center" />
-      <IconButton mode="Advanced" variant="Spock" placeSelf="start center" />
-      <IconButton mode="Advanced" variant="Paper" placeSelf="start center" />
-      <IconButton mode="Advanced" variant="Lizard" placeSelf="start end" />
-      <IconButton mode="Advanced" variant="Rock" placeSelf="start" />
+      <IconButton difficult="Advanced" variant="Scissors" placeSelf="end center" />
+      <IconButton difficult="Advanced" variant="Spock" placeSelf="start center" />
+      <IconButton difficult="Advanced" variant="Paper" placeSelf="start center" />
+      <IconButton difficult="Advanced" variant="Lizard" placeSelf="start end" />
+      <IconButton difficult="Advanced" variant="Rock" placeSelf="start" />
     </AdvancedGrid>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useMode } from "../context";
-import { Dispatcher } from "../types";
+import type { Dispatcher } from "../types";
 
 const Wrapper = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
@@ -58,6 +58,7 @@ const Image = styled.img`
 const Button = styled.button`
   background: transparent;
   border: none;
+  cursor: pointer;
 
   @media (min-width: ${(props) => props.theme.media.desktop}) {
     order: 2;

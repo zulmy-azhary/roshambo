@@ -64,7 +64,7 @@ const ScoreText = styled.p`
   }
 `;
 
-const ScoreNumber = styled.p`
+const ScoreNumber = styled.h1`
   color: var(--dark);
   font-weight: 700;
   font-size: 2.75rem;

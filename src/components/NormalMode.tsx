@@ -30,9 +30,9 @@ const NormalGrid = styled.div`
 const NormalMode: React.FC = () => {
   return (
     <NormalGrid>
-      <IconButton mode="Normal" variant="Paper" />
-      <IconButton mode="Normal" variant="Scissors" />
-      <IconButton mode="Normal" variant="Rock" />
+      <IconButton difficult="Normal" variant="Paper" />
+      <IconButton difficult="Normal" variant="Scissors" />
+      <IconButton difficult="Normal" variant="Rock" />
     </NormalGrid>
   );
 };
