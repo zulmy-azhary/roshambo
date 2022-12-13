@@ -4,4 +4,5 @@ export { default as NormalMode } from "./NormalMode";
 export { default as AdvancedMode } from "./AdvancedMode";
 export { default as IconButton } from "./IconButton";
 export { default as Result } from "./Result";
+export { default as Modal } from "./Modal";
 export { default as Footer } from "./Footer";

@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useMode, useResult } from "../context";
 import { Button } from "../styles/SharedComponents";
+import { Dispatcher } from "../types";
 
 const Container = styled.footer`
   width: 100%;
@@ -10,7 +11,11 @@ const Container = styled.footer`
   align-items: center;
 `;
 
-const Footer: React.FC = () => {
+interface Props {
+  setModal: Dispatcher<boolean>;
+}
+
+const Footer: React.FC<Props> = ({ setModal }) => {
   const { mode, handleClick } = useMode();
   const { loading } = useResult();
 
@@ -23,7 +28,9 @@ const Footer: React.FC = () => {
       >
         {mode === "Normal" ? "Advanced" : "Normal"} Mode
       </Button>
-      <Button disabled={loading}>Rules</Button>
+      <Button onClick={() => setModal(true)} disabled={loading}>
+        Rules
+      </Button>
     </Container>
   );
 };

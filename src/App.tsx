@@ -1,5 +1,6 @@
+import { useState } from "react";
 import styled from "styled-components";
-import { Footer, Main, Navbar } from "./components";
+import { Footer, Main, Modal, Navbar } from "./components";
 import { ResultProvider, SelectedProvider } from "./context";
 
 const Container = styled.div`
@@ -18,6 +19,7 @@ const Container = styled.div`
 `;
 
 const App: React.FC = () => {
+  const [modal, setModal] = useState<boolean>(false);
   return (
     <Container>
       <ResultProvider>
@@ -25,8 +27,9 @@ const App: React.FC = () => {
         <SelectedProvider>
           <Main />
         </SelectedProvider>
-        <Footer />
+        <Footer setModal={setModal} />
       </ResultProvider>
+      <Modal modal={modal} setModal={setModal} />
     </Container>
   );
 };
