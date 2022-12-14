@@ -14,6 +14,7 @@ const Wrapper = styled.div`
 `;
 
 const Container = styled.div`
+  width: 100%;
   height: 100%;
   background-color: white;
   display: flex;
@@ -23,8 +24,8 @@ const Container = styled.div`
   text-align: center;
   padding: 1rem 2.5rem;
 
-  @media (min-width: ${(props) => props.theme.media.desktop}) {
-    width: calc(var(--desktop) / 3);
+  @media (min-width: ${(props) => props.theme.media.tablet}) {
+    width: calc(var(--tablet) / 1.5);
     height: fit-content;
     margin: 0 auto;
     background-color: white;
@@ -34,6 +35,10 @@ const Container = styled.div`
     border-radius: 10px;
     row-gap: 2.5rem;
     padding: 2rem 2.5rem 2.75rem;
+  }
+
+  @media (min-width: ${(props) => props.theme.media.desktop}) {
+    width: calc(var(--desktop) / 3);
   }
 `;
 
@@ -46,12 +51,12 @@ const Image = styled.img`
 
   @media (min-width: ${(props) => props.theme.media.tablet}) {
     width: calc(var(--tablet) / 1.75);
+    margin: 0 auto;
+    order: 3;
   }
 
   @media (min-width: ${(props) => props.theme.media.desktop}) {
     width: calc(var(--desktop) / 4.25);
-    margin: 0 auto;
-    order: 3;
   }
 `;
 
@@ -60,7 +65,7 @@ const Button = styled.button`
   border: none;
   cursor: pointer;
 
-  @media (min-width: ${(props) => props.theme.media.desktop}) {
+  @media (min-width: ${(props) => props.theme.media.tablet}) {
     order: 2;
   }
 `;
